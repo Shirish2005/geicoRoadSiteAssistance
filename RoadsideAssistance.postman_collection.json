@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "3061b6ad-1a54-4c9e-996f-65c4fca572c9",
+		"name": "RoadsideAssistance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "updateAssistantLocation",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"assistantID\": 3,\r\n    \"latitude\": 34.253164,\r\n    \"longitude\": 22.251076\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/roadsideassistance/updateAssistantLocation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"roadsideassistance",
+						"updateAssistantLocation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findNearestAssistants",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n      \"latitude\": 34.253164,\r\n    \"longitude\": 117.251076\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/roadsideassistance/findNearestAssistants",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"roadsideassistance",
+						"findNearestAssistants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reserveAssistant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n     \"customerID\" : 123456,\r\n      \"latitude\": 34.253164,\r\n    \"longitude\": 117.251076\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/roadsideassistance/reserveAssistant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"roadsideassistance",
+						"reserveAssistant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "releaseAssistant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n     \"assistantID\" : 123456\r\n   \r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/roadsideassistance/releaseAssistant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"roadsideassistance",
+						"releaseAssistant"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

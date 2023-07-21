@@ -1,0 +1,208 @@
+[
+  {
+    "assistantID": 1,
+    "assistantName": "Vasily",
+    "streetName": "4377 Jay Road",
+    "phone": "780-309-9549",
+    "city": "Yunlong",
+    "assigned": false,
+    "latitude": 34.253164,
+    "longitude": 117.251076
+  },
+  {
+    "assistantID": 2,
+    "assistantName": "Alicea",
+    "streetName": "04 Hallows Alley",
+    "phone": "957-756-5177",
+    "city": "Huangqiang",
+    "assigned": false,
+    "latitude": 22.2304314,
+    "longitude": 113.5411611
+  },
+  {
+    "assistantID": 3,
+    "assistantName": "Adelina",
+    "streetName": "71205 Porter Parkway",
+    "phone": "128-357-1006",
+    "city": "Xiwang",
+    "assigned": false,
+    "latitude": 36.947175,
+    "longitude": 117.702372
+  },
+  {
+    "assistantID": 4,
+    "assistantName": "Riva",
+    "streetName": "6 Scoville Center",
+    "phone": "449-118-6747",
+    "assigned": false,
+    "city": "Montaigu",
+    "zip": "85614 CEDEX",
+    "latitude": 48.1779574,
+    "longitude": -1.7555399
+  },
+  {
+    "assistantID": 5,
+    "assistantName": "Maud",
+    "streetName": "809 Judy Point",
+    "phone": "935-453-1484",
+    "city": "Luntas",
+    "assigned": false,
+    "latitude": -8.1130067,
+    "longitude": 112.0304508
+  },
+  {
+    "assistantID": 6,
+    "assistantName": "Perry",
+    "streetName": "41597 Del Sol Place",
+    "phone": "100-846-0804",
+    "city": "Pisangkemeng",
+    "assigned": false,
+    "latitude": -8.8025,
+    "longitude": 117.7774
+  },
+  {
+    "assistantID": 7,
+    "assistantName": "Alene",
+    "streetName": "5 John Wall Court",
+    "phone": "304-664-6584",
+    "city": "Cerinza",
+    "zip": "150627",
+    "assigned": false,
+    "latitude": 5.95661,
+    "longitude": -72.9489509
+  },
+  {
+    "assistantID": 8,
+    "assistantName": "Pia",
+    "streetName": "50 Bayside Trail",
+    "phone": "902-432-1797",
+    "city": "Sortavala",
+    "assigned": false,
+    "zip": "186793",
+    "latitude": 61.6487504,
+    "longitude": 30.5926449
+  },
+  {
+    "assistantID": 9,
+    "assistantName": "Buck",
+    "streetName": "569 Laurel Place",
+    "phone": "422-846-5445",
+    "city": "Arklow",
+    "assigned": false,
+    "zip": "Y14",
+    "latitude": 51.880525,
+    "longitude": -8.4523258
+  },
+  {
+    "assistantID": 10,
+    "assistantName": "Cammie",
+    "streetName": "365 Toban Court",
+    "phone": "467-520-1766",
+    "city": "Hanchang",
+    "assigned": false,
+    "latitude": 28.704586,
+    "longitude": 113.584985
+  },
+  {
+    "assistantID": 11,
+    "assistantName": "Jena",
+    "streetName": "92 Quincy Junction",
+    "phone": "150-648-8920",
+    "city": "Kertosari",
+    "assigned": false,
+    "latitude": -8.2334215,
+    "longitude": 114.3787108
+  },
+  {
+    "assistantID": 12,
+    "assistantName": "Wylma",
+    "streetName": "069 Briar Crest Avenue",
+    "phone": "572-731-8600",
+    "city": "Olleros",
+    "assigned": false,
+    "latitude": -12.2179111,
+    "longitude": -76.5148607
+  },
+  {
+    "assistantID": 13,
+    "assistantName": "Fran",
+    "streetName": "1410 Kipling Pass",
+    "phone": "791-483-3133",
+    "assigned": false,
+    "city": "Zhangaqorghan",
+    "latitude": 43.915,
+    "longitude": 67.24806
+  },
+  {
+    "assistantID": 14,
+    "assistantName": "Brynn",
+    "streetName": "6 Almo Drive",
+    "assigned": false,
+    "phone": "952-779-4505",
+    "city": "Diapaga",
+    "latitude": 12.0718334,
+    "longitude": 1.7879685
+  },
+  {
+    "assistantID": 15,
+    "assistantName": "Torrence",
+    "streetName": "491 Steensland Way",
+    "assigned": false,
+    "phone": "832-501-3775",
+    "city": "Yanjiatai",
+    "latitude": 39.944315,
+    "longitude": 116.809657
+  },
+  {
+    "assistantID": 16,
+    "assistantName": "Addi",
+    "streetName": "30 Buena Vista Terrace",
+    "phone": "667-122-8446",
+    "city": "Saḩāb",
+    "assigned": false,
+    "latitude": 31.8694268,
+    "longitude": 36.0064582
+  },
+  {
+    "assistantID": 17,
+    "assistantName": "Marline",
+    "streetName": "068 Hauk Street",
+    "phone": "365-622-4625",
+    "assigned": false,
+    "city": "Bedayu",
+    "latitude": -8.0820572,
+    "longitude": 113.1158644
+  },
+  {
+    "assistantID": 18,
+    "assistantName": "Quinn",
+    "streetName": "27738 Dottie Park",
+    "phone": "356-720-6169",
+    "city": "Gamay",
+    "assigned": false,
+    "zip": "6422",
+    "latitude": 12.3856506,
+    "longitude": 125.3027214
+  },
+  {
+    "assistantID": 19,
+    "assistantName": "Doralyn",
+    "streetName": "22 Scoville Avenue",
+    "phone": "364-175-6375",
+    "assigned": false,
+    "city": "Neochórion",
+    "latitude": 38.7,
+    "longitude": 21.466667
+  },
+  {
+    "assistantID": 20,
+    "assistantName": "Ken",
+    "streetName": "9146 Pennsylvania Way",
+    "phone": "904-399-6741",
+    "city": "Czerniejewo",
+    "zip": "62-250",
+    "assigned": false,
+    "latitude": 52.4262274,
+    "longitude": 17.4890829
+  }
+]
