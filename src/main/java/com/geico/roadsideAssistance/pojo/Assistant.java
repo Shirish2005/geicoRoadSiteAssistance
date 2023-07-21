@@ -31,4 +31,6 @@ public class Assistant {
     @NonNull
     public String longitude;
 
+    public Integer distance;
+
 }

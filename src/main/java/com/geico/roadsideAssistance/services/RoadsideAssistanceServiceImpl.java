@@ -20,19 +20,22 @@ public class RoadsideAssistanceServiceImpl implements RoadsideAssistanceService 
 
     public Map<Integer, Integer> assistantCustomerMap = new HashMap<>();
 
-    private static Map<Integer, Assistant> getSortedSetBasedonDistance(Geolocation geolocation) {
+    private static SortedSet<Assistant> getSortedSetBasedonDistance(Geolocation geolocation) {
         List<Assistant> assistantlst = ApplicationUtil.getAssistant();
 
-        Map<Integer, Assistant> SortedAssistantMap = new TreeMap<>();
+        SortedSet<Assistant> assistantSortedSet =new TreeSet<>(
+                Comparator.comparing(Assistant::getDistance));
+
         // using TreeMap to sort bases on shortest distance
 
         for (Assistant assistant : assistantlst) {
 
-            SortedAssistantMap.put(DistanceUtil.getDistance(assistant.getLatitude(), assistant.getLongitude(), geolocation.getLatitude(), geolocation.getLongitude()), assistant);
+            assistant.setDistance(DistanceUtil.getDistance(assistant.getLatitude(), assistant.getLongitude(), geolocation.getLatitude(), geolocation.getLongitude()));
+            assistantSortedSet.add(assistant);
         }
 
         // Set<Assistant> valueSet= new HashSet<Assistant>(assistantMap.values());
-        return SortedAssistantMap;
+        return assistantSortedSet;
     }
 
     @Override
@@ -47,22 +50,27 @@ public class RoadsideAssistanceServiceImpl implements RoadsideAssistanceService 
     }
 
     @Override
-    public Set<Assistant> findNearestAssistants(Geolocation geolocation, int limit) {
+    public SortedSet<Assistant> findNearestAssistants(Geolocation geolocation, int limit) {
 
-        Map<Integer, Assistant> assistantMap = getSortedSetBasedonDistance(geolocation);
+        //SortedSet<Assistant> assistantSortedSet = new TreeSet();
 
-        Set<Assistant> valueSet = new HashSet<Assistant>(assistantMap.values());
 
-        Set<Assistant> assistantSet  = new HashSet<Assistant>() ;
+        SortedSet<Assistant> assistantSortedSet = getSortedSetBasedonDistance(geolocation);
+        SortedSet<Assistant> assistantSet = new TreeSet<>(
+                Comparator.comparing(Assistant::getDistance));
 
+        /*   Set<Assistant> valueSet = new HashSet<Assistant>(assistantMap.values());
+
+
+         */
         int count = 0;
-        for (Assistant assistant : valueSet) {
+        for (Assistant assistant : assistantSortedSet) {
 
             if (!assistantCustomerMap.containsKey(assistant.getAssistantID())) {
 
                 if (count != limit) {
                     assistantSet.add(assistant);
-                    count ++;
+                    count++;
                 } else {
                     break;
                 }
@@ -77,20 +85,22 @@ public class RoadsideAssistanceServiceImpl implements RoadsideAssistanceService 
     @Override
     public Optional<Assistant> reserveAssistant(Customer customer, Geolocation customerLocation) {
 
-        Map<Integer, Assistant> assistantMap = getSortedSetBasedonDistance(customerLocation);
-        Optional<Assistant> assistant = null;
-
-        for (Map.Entry<Integer, Assistant> entry : assistantMap.entrySet()) {
-            assistant = Optional.ofNullable(entry.getValue());
+        SortedSet<Assistant> assistantSortedSet = getSortedSetBasedonDistance(customerLocation);
+        SortedSet<Assistant> assistantSet = new TreeSet<Assistant>();
 
 
-            if (!assistantCustomerMap.containsKey(assistant.get().getAssistantID())) {
-                assistantCustomerMap.put(assistant.get().getAssistantID(), customer.customerID);
-                break;
+        // Map<Integer, Assistant> assistantMap = getSortedSetBasedonDistance(customerLocation);
+        Optional<Assistant> assistantEmpty = null;
+
+        for (Assistant assistant : assistantSortedSet) {
+
+            if (!assistantCustomerMap.containsKey(assistant.getAssistantID())) {
+                assistantCustomerMap.put(assistant.getAssistantID(), customer.customerID);
+                return Optional.of(assistant);
             }
 
         }
-        return assistant;
+        return assistantEmpty;
 
     }
 
