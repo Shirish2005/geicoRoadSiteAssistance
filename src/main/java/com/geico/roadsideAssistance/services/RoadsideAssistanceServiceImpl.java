@@ -8,13 +8,10 @@ import com.geico.roadsideAssistance.util.DistanceUtil;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 public class RoadsideAssistanceServiceImpl implements RoadsideAssistanceService {
 
-
-    //ApplicationUtil applicationUtil  ;
 
     public Map<Integer, Assistant> assistantMap;
 
@@ -23,8 +20,7 @@ public class RoadsideAssistanceServiceImpl implements RoadsideAssistanceService 
     private static SortedSet<Assistant> getSortedSetBasedonDistance(Geolocation geolocation) {
         List<Assistant> assistantlst = ApplicationUtil.getAssistant();
 
-        SortedSet<Assistant> assistantSortedSet =new TreeSet<>(
-                Comparator.comparing(Assistant::getDistance));
+        SortedSet<Assistant> assistantSortedSet = new TreeSet<>(Comparator.comparing(Assistant::getDistance));
 
         // using TreeMap to sort bases on shortest distance
 
@@ -52,17 +48,9 @@ public class RoadsideAssistanceServiceImpl implements RoadsideAssistanceService 
     @Override
     public SortedSet<Assistant> findNearestAssistants(Geolocation geolocation, int limit) {
 
-        //SortedSet<Assistant> assistantSortedSet = new TreeSet();
-
-
         SortedSet<Assistant> assistantSortedSet = getSortedSetBasedonDistance(geolocation);
-        SortedSet<Assistant> assistantSet = new TreeSet<>(
-                Comparator.comparing(Assistant::getDistance));
+        SortedSet<Assistant> assistantSet = new TreeSet<>(Comparator.comparing(Assistant::getDistance));
 
-        /*   Set<Assistant> valueSet = new HashSet<Assistant>(assistantMap.values());
-
-
-         */
         int count = 0;
         for (Assistant assistant : assistantSortedSet) {
 
@@ -75,10 +63,7 @@ public class RoadsideAssistanceServiceImpl implements RoadsideAssistanceService 
                     break;
                 }
             }
-
         }
-
-
         return assistantSet;
     }
 
@@ -88,8 +73,6 @@ public class RoadsideAssistanceServiceImpl implements RoadsideAssistanceService 
         SortedSet<Assistant> assistantSortedSet = getSortedSetBasedonDistance(customerLocation);
         SortedSet<Assistant> assistantSet = new TreeSet<Assistant>();
 
-
-        // Map<Integer, Assistant> assistantMap = getSortedSetBasedonDistance(customerLocation);
         Optional<Assistant> assistantEmpty = null;
 
         for (Assistant assistant : assistantSortedSet) {
@@ -106,9 +89,6 @@ public class RoadsideAssistanceServiceImpl implements RoadsideAssistanceService 
 
     @Override
     public void releaseAssistant(Customer customer, Assistant assistant) {
-
         assistantCustomerMap.remove(assistant.getAssistantID());
-
-
     }
 }

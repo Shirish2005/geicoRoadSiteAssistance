@@ -8,7 +8,6 @@ import com.geico.roadsideAssistance.pojo.Assistant;
 import com.geico.roadsideAssistance.pojo.Customer;
 import com.geico.roadsideAssistance.pojo.Geolocation;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 
 @Component
@@ -28,7 +27,7 @@ public interface RoadsideAssistanceService {
 	 * to return * @return a sorted collection of assistants ordered ascending by
 	 * distance from geoLocation
 	 */
-	Set<Assistant> findNearestAssistants(Geolocation geolocation, int limit);
+	SortedSet<Assistant> findNearestAssistants(Geolocation geolocation, int limit);
 
 	/**
 	 * * This method reserves an assistant for a Geico customer that is stranded on

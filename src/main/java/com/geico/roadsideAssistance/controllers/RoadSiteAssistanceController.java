@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 import java.util.Set;
-import java.util.SortedSet;
 
 @RestController
 @RequestMapping(value = "/roadsideassistance")
@@ -53,7 +52,7 @@ public class RoadSiteAssistanceController {
         geolocation.setLatitude(customer.getLatitude());
         geolocation.setLongitude(customer.getLongitude());
 
-        Optional<Assistant> response = roadsideAssistanceService.reserveAssistant(customer , geolocation );
+        Optional<Assistant> response = roadsideAssistanceService.reserveAssistant(customer, geolocation);
 
         return new ResponseEntity<>(response, HttpStatus.OK);
 
@@ -64,7 +63,7 @@ public class RoadSiteAssistanceController {
 
         Customer customer = null;
 
-         roadsideAssistanceService.releaseAssistant(customer , assistant );
+        roadsideAssistanceService.releaseAssistant(customer, assistant);
 
         return new ResponseEntity<>(HttpStatus.OK);
 
